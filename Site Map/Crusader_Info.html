@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>COTLI Calculator and Ref</title>
+<!--  <link rel="stylesheet" href="StyleRef.css"> -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+     <script type="text/javascript" src="../Java Scripts/gameTable.js"></script>
+
+     <script type="text/javascript" src="../Java Scripts/Parser.js"></script>
+
+     <script type="text/javascript">
+     document.addEventListener('DOMContentLoaded', function() {
+       Load_Data();
+       }, false);
+     </script>
+
+     <script type="text/javascript">
+     document.addEventListener('DOMContentLoaded', function() {
+       Load_cruTable();
+       }, false);
+     </script>
+
+
+</head>
+
+<body style="background-color:lightgrey; text-align:center;">
+
+
+  <style>
+<!-- Below is the color coding for the rows broken into batches of 4 bench slots at a time. The offset value is because of how the rows are counted and the "header" row. -->
+
+  tr:nth-child(20n+1) {background-color: #4682b4;}
+  tr:nth-child(20n+2) {background-color: #4682b4;}
+  tr:nth-child(20n+3) {background-color: #4682b4;}
+  tr:nth-child(20n+4) {background-color: #4682b4;}
+  tr:nth-child(20n+5) {background-color: #4682b4;}
+
+  tr:nth-child(20n+6) {background-color: #3abda0;}
+  tr:nth-child(20n+7) {background-color: #3abda0;}
+  tr:nth-child(20n+8) {background-color: #3abda0;}
+  tr:nth-child(20n+9) {background-color: #3abda0;}
+  tr:nth-child(20n+10) {background-color: #3abda0;}
+
+  tr:nth-child(20n+11) {background-color: #e09e87;}
+  tr:nth-child(20n+12) {background-color: #e09e87;}
+  tr:nth-child(20n+13) {background-color: #e09e87;}
+  tr:nth-child(20n+14) {background-color: #e09e87;}
+  tr:nth-child(20n+15) {background-color: #e09e87;}
+
+  tr:nth-child(20n+16) {background-color: #93b881;}
+  tr:nth-child(20n+17) {background-color: #93b881;}
+  tr:nth-child(20n+18) {background-color: #93b881;}
+  tr:nth-child(20n+19) {background-color: #93b881;}
+  tr:nth-child(20n+20) {background-color: #93b881;}
+
+
+    table {
+      border-collapse: collapse;
+      border: 5px solid black;
+      tex-align:center;
+    }
+    th {
+      padding: 20px;
+      border: solid black 3px;
+    }
+
+    td {
+      padding: 20px;
+      border: solid black 1px;
+    }
+
+<!--
+    <td class='dropdown-cell'> [your data] </td>  .dropdown-cell{[your css rules}
+    td.rarity {
+      <select>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    }
+-->
+  </style>
+
+
+  <h1>
+    Crusader Table
+  </h1>
+
+  <table align="center">
+    <thead>
+     <tr style="background-color:#e36f8a; text-align:center;">
+         <th>Crusader Name</th>
+         <th>EP</th>
+         <th>Gear 1 Name</th>
+         <th>Gear 1 Rarity</th>
+         <th>Gear 2 Name</th>
+         <th>Gear 2 Rarity</th>
+         <th>Gear 3 Name</th>
+         <th>Gear 3 Rarity</th>
+         <th>Unlocked</th>
+    </tr>
+    </thead>
+    <!-- Below is the master table for Crusaders. Tags are: CruName, CrEP_# for EP, CrGN1_# for Gear 1 name, CrGR1_# for Gear 1 Rarity (similarly gear 2 and 3) and CrUnlock_# for unlock, where # is Crusader ID. -->
+
+<!-- Bench One
+
+The Bush Whacker - 1
+RoboRabbit - 38
+Graham The Driver - 66
+Warwick the Warlock - 75
+Slisiblyp, the Alien Scientist - 89
+-->
+    <tbody id="cruTable">
+
+    </tbody>
+
+    </table>
+
+  </body>
+
+
+<p>
+<button onclick="Load_cruTable()">Click Here If Crusader Data Failed to Load</button>
+</p>
+
+</html>
+
+
+
