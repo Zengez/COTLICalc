@@ -1,6 +1,7 @@
     var benchTMP = "";
     var benchTMPTwo = "";
     var benchList = "";
+    var benchMax = 28;
 //    var cruName = JSON.parse(localStorage.cruName);
     function populateBench () {
             cruName = [
@@ -203,8 +204,6 @@
 //            {"name":"Not Implemented","ID":0, "Unlocked":"Not Implemented"}
         ]
         ];
-    var benchSize = 5;
-    var benchMax = 28;
     var indexStart = 0;
     var i;
     var j;
@@ -233,49 +232,44 @@
        "Chiyome","Viktor the Vampire","Chef Casey","Xander, the Xmas Dragon"
        ]
 
-
-
-function updateBench(crusader, benchSlot){
-    currentBench[benchSlot]=crusader;
-    for (i=0; i < currentBench.length; i++) {// Iterate over the entire selection length
-        currentBenchTMP = "<option value=".concat(currentBench[i])+">".concat(currentBench[i])+"</option>";
-        currentBenchTMPTwo = currentBenchTMPTwo.concat(currentBenchTMP);
-        }
-//        currentBenchList = "<select>"+currentBenchTMPTwo+"</select>";
-    currentBenchList = currentBenchTMPTwo;
+function updateBench(crusader, benchSlot) {
     var x = document.getElementsByClassName("currentBenchSelect");// Collect all the elements that are dropdown list for current bench crusaders.
-    var j;// Define an iterating Variable
-    for (j=0; j < x.length; j++) {// Update the current bench crusaders dropdown list.
-        x[j].innerHTML = currentBenchList;
+    for (j=0; j< x.length; j++){
+        x[j].options[benchSlot] = new Option(crusader);
     }
-        setSelectedIndex(document.getElementById("WWSlot01"),"Fire Phoenix");// Retain user selection, still not working yet.
     
-    currentBenchTMPTwo = "";
-//        alert("You tried to update the bench "+ benchSlot + " with crusader " + crusader); // Debugging Code
+    
+    
 }
 
-function setSelectedIndex(s, valsearch) {
-// Loop through all the items in drop down list
-    for (i = 0; i< s.options.length; i++) {
-        if (s.options[i].value == valsearch) {
-//            alert("This executed at least.");
-            // Item is found. Set its property and exit
-            s.options[i].selected = true;
-            break;
+function initiateCurrentBench() {
+    var x = document.getElementsByClassName("currentBenchSelect");// Collect all the elements that are dropdown list for current bench crusaders.
+    var j;// Define an iterating Variable
+    var i;
+    for (j=0; j < x.length; j++) {// Update the current bench crusaders dropdown list.
+        for(i = 0; i < benchMax + 1; i++) {// We add 1 to benchMax to account for the "empty" bench slot.
+            x[j].options[i] = new Option(currentBench[i]);
         }
     }
-    return;
 }
     
 var userFormations = {
-    'WW':[0,0,0,0,0,0,0,0,0,0] 
+    'WW':[0,0,0,0,0,0,0,0,0,0]
     }
 
 function currentSelection(mapID,slotID,benchNum) {
     // First we must parse the value. It should be of the form "MapID"+"slot"+"SlotID"
     var formationStr = "userFormation." + mapID;
-    formationStr[slotID] = benchNum;
+    userFormations[mapID][slotID]=benchNum;
+//    formationStr[slotID] = benchNum;
+//    alert("Did this work?");
 }
-    
+
+function displayDebug() {
+    var debugStr = JSON.stringify(userFormations.WW);
+//    alert("Alert worked?");
+    document.getElementById("debug").innerHTML = debugStr;
+//    alert("As did second alert.");
+}
     
     

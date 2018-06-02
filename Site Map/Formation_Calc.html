@@ -13,7 +13,7 @@
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
     populateBench();
-    updateBench("Bush Whacker",1);
+    initiateCurrentBench();
     }, false);
  </script>
 
@@ -30,7 +30,7 @@
     </thead>
     <tr>
         <td>
-             <select id="WWSlot01" class="currentBenchSelect" onchange=currentSelection('WW',0,this.selectedOption);>
+             <select id="WWSlot01" class="currentBenchSelect" onchange=currentSelection('WW',0,this.selectedIndex);>
              </select>
         </td>        
         <td> </td>
@@ -40,7 +40,7 @@
     <tr>
         <td> </td>
         <td id="WWSlot05">
-             <select class="currentBenchSelect">
+             <select class="currentBenchSelect" onchange=currentSelection('WW',4,this.selectedIndex);>
              <option>PlaceHolder</option>
              </select>
         </td>        
@@ -49,13 +49,13 @@
     </tr>
     <tr>
         <td id="WWSlot02">
-             <select class="currentBenchSelect">
+             <select class="currentBenchSelect" onchange=currentSelection('WW',1,this.selectedIndex);>
              <option>PlaceHolder</option>
              </select>
         </td>        
         <td> </td>
         <td id="WWSlot08">
-             <select class="currentBenchSelect">
+             <select class="currentBenchSelect" onchange=currentSelection('WW',7,this.selectedIndex);>
              <option>PlaceHolder</option>
              </select>
         </td>        
@@ -64,26 +64,26 @@
     <tr>
         <td> </td>
         <td id="WWSlot06">
-             <select class="currentBenchSelect">
+             <select class="currentBenchSelect" onchange=currentSelection('WW',5,this.selectedIndex);>
              <option>PlaceHolder</option>
              </select>
         </td>        
         <td> </td>        
         <td id="WWSlot10">
-             <select class="currentBenchSelect">
+             <select class="currentBenchSelect" onchange=currentSelection('WW',9,this.selectedIndex);>
              <option>PlaceHolder</option>
              </select>
         </td>        
     </tr>
     <tr>
         <td id="WWSlot03">
-             <select class="currentBenchSelect">
+             <select class="currentBenchSelect" onchange=currentSelection('WW',2,this.selectedIndex);>
              <option>PlaceHolder</option>
              </select>
         </td>        
         <td> </td>        
         <td id="WWSlot09">
-             <select class="currentBenchSelect">
+             <select class="currentBenchSelect" onchange=currentSelection('WW',8,this.selectedIndex);>
              <option>PlaceHolder</option>
              </select>
         </td>        
@@ -92,7 +92,7 @@
     <tr>
         <td> </td>
         <td id="WWSlot07">
-             <select class="currentBenchSelect">
+             <select class="currentBenchSelect" onchange=currentSelection('WW',6,this.selectedIndex);>
              <option>PlaceHolder</option>
              </select>
         </td>        
@@ -101,7 +101,7 @@
     </tr>
     <tr>
          <td id="WWSlot04">
-             <select class="currentBenchSelect">
+             <select class="currentBenchSelect" onchange=currentSelection('WW',3,this.selectedIndex);>
              <option>PlaceHolder</option>
              </select>
         </td>        
@@ -171,7 +171,12 @@
 
   </body>
 
+<p>
+<button onclick="displayDebug()">Debug</button>
+</p>
 
+
+  <p id="debug"> This should get replaced.</p>
 </html>
 
 
