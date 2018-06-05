@@ -32,7 +32,8 @@ var gameTables = {
                    ],
         "rarity":1,
         "graphic_id":1633,
-        "odds":100,"hero_id":1,
+        "odds":100,
+        "hero_id":1,
         "slot_id":1,
         "group_id":0,
         "golden":0,
@@ -2178,7 +2179,17 @@ var gameTables = {
     {"id":109,"name":"Biff the Magic Rabbit","description":"He's ready to dish out a healthy dose of beta-carotene.","base_cost":"2457600000000000000000000","click_damage":"0","graphic_id":9241,"hp_mod":1,"default_graphics":{"portrait_graphic":9242,"portrait_offsetY":-20,"graphic_id":9241,"disenchant_offset_y":-20},"seat_id":"25","properties":{"type":"animal","tags":["event","male","magic","tank","animal"],"no_recipes_until":"2018-04-17 12:00:00"}},
     {"id":110,"name":"Thoonoose","description":"The most powerful being in the universe: some purple guy.","base_cost":"3932160000000000000000000000","click_damage":"0","graphic_id":9330,"hp_mod":1,"default_graphics":{"portrait_graphic":9331,"portrait_offsetY":-20,"graphic_id":9330,"disenchant_offset_y":-20},"seat_id":"27","properties":{"type":"human","tags":["event","male","dps","supernatural","alien"],"no_recipes_until":"2018-05-08 12:00:00"}}
 ], "buffTable":[
-    {"id":1,"name":"Splash","description":"Splish, Splash, Splosh.","effect":"dps_to_all_monsters,20","rarity":1,"duration":150,"graphic_id":2376,"odds":100,"properties":[]},
+    {
+        "id":1,
+        "name":"Splash",
+        "description":"Splish, Splash, Splosh.",
+        "effect":"dps_to_all_monsters,20",
+        "rarity":1,
+        "duration":150,
+        "graphic_id":2376,
+        "odds":100,
+        "properties":[]
+        },
     {"id":2,"name":"Blaze","description":"Those monsters will feel the heat.","effect":"dps_to_all_monsters,30","rarity":2,"duration":150,"graphic_id":2376,"odds":50,"properties":[]},
     {"id":3,"name":"Napalm","description":"A flammable liquid used in warfare. Gets super hot.","effect":"dps_to_all_monsters,40","rarity":3,"duration":150,"graphic_id":2376,"odds":25,"properties":[]},
     {"id":4,"name":"Inferno","description":"As hot as hell.","effect":"dps_to_all_monsters,50","rarity":4,"duration":150,"graphic_id":2376,"odds":10,"properties":[]},
@@ -2324,7 +2335,17 @@ var gameTables = {
     {"id":145,"name":"The End of an Era","description":"Is anyone else excited to see who survives?","effect":"event_buff,111","rarity":4,"duration":0,"graphic_id":9342,"odds":0,"properties":{"apply_offline":true,"keep_on_reset":true,"for_event_id":111}},
     {"id":146,"name":"Spring Flowers","description":"... bring Summer showers. Wait, no... that's not right.","effect":"event_buff,112","rarity":4,"duration":0,"graphic_id":9338,"odds":0,"properties":{"apply_offline":true,"keep_on_reset":true,"for_event_id":112}}
 ], "effectTable":[
-    {"id":1,"effect_key":"global_dps_multiplier_mult","param_names":"","owner":"global","properties":[],"descriptions":{"desc":"Increases the DPS of all Crusaders by $amount%","short":"All Crusaders DPS +$(amount)%"}},
+    {
+        "id":1,
+        "effect_key":"global_dps_multiplier_mult",
+        "param_names":"",
+        "owner":"global",
+        "properties":[],
+        "descriptions":{
+            "desc":"Increases the DPS of all Crusaders by $amount%",
+            "short":"All Crusaders DPS +$(amount)%"
+            }
+        },
     {"id":2,"effect_key":"global_dps_multiplier_add","param_names":"","owner":"global","properties":[],"descriptions":{"desc":"Increases the DPS of all Crusaders by $amount%"}},
     {"id":3,"effect_key":"global_dps_multiplier_reduce","param_names":"","owner":"global","properties":{"negative":true},"descriptions":{"desc":"Reduces the DPS of all Crusaders by $amount%"}},
     {"id":4,"effect_key":"hero_dps_multiplier_mult","param_names":"","owner":"","properties":[],"descriptions":{"desc":"Increases the Base DPS of $target by $amount%"}},
@@ -2592,7 +2613,22 @@ var gameTables = {
     {"id":274,"effect_key":"increase_monster_damage_dealt","param_names":"","owner":"area","properties":[],"descriptions":{"desc":"Increases the amount of damage $target does by $amount%"}},
     {"id":275,"effect_key":"win_area_monster_gold_bonus","param_names":"","owner":"area","properties":[],"descriptions":{"desc":"Increases the amount of Gold dropped by $target by $amount% when the area is instantly won"}}
 ], "formationAbilityTable":[
-    {"id":9,"name":"Sharpen Party","description":"Keeps your allies' weapons sharp, increasing their attack.","effect_description":"FORMATION_ABILITY_9_SHARPENPARTY_EFFECT_DESC|Increases the Base DPS of Crusaders in the same column as Jim the Lumberjack by $(amount)%","effect":[{"effect_string":"hero_dps_multiplier_mult,50","targets":["col"]}],"requirements":[],"effect_graphic_id":1326,"hero_id":2,"properties":[]},
+    {
+        "id":9,
+        "name":"Sharpen Party",
+        "description":"Keeps your allies' weapons sharp, increasing their attack.",
+        "effect_description":"FORMATION_ABILITY_9_SHARPENPARTY_EFFECT_DESC|Increases the Base DPS of Crusaders in the same column as Jim the Lumberjack by $(amount)%",
+        "effect":[
+                  {
+                    "effect_string":"hero_dps_multiplier_mult,50",
+                    "targets":["col"]
+                    }
+                ],
+        "requirements":[],
+        "effect_graphic_id":1326,
+        "hero_id":2,
+        "properties":[]
+        },
     {"id":10,"name":"Craziness","description":"I'll do extra damage if there's no one in front of me. Out of the way!","effect_description":"FORMATION_ABILITY_10_CRAZINESS_EFFECT_DESC|Increases the Base DPS of The Washed Up Hermit by $(amount)% when no one is in front of him","effect":[{"effect_string":"hero_dps_multiplier_mult,200","targets":["self"]}],"requirements":[{"requirement":"no_front"}],"effect_graphic_id":47,"hero_id":5,"properties":[]},
     {"id":11,"name":"Bulwark","description":"Allows heroes behind Sasha to focus on attacking, raising their damage.","effect_description":"FORMATION_ABILITY_11_BULWARK_EFFECT_DESC|Increases the Base DPS of Crusaders in the column behind Sasha the Fierce Warrior by $(amount)%","effect":[{"effect_string":"hero_dps_multiplier_mult,30","targets":["prev_col"],"multiply_bonus":true}],"requirements":[],"effect_graphic_id":3280,"hero_id":4,"properties":[]},
     {"id":12,"name":"Under My Wing","description":"The Gryphon uses her giant wings to help protect the heroes in the column in front of her!","effect_description":"FORMATION_ABILITY_12_UNDERMYWING_EFFECT_DESC|Crusaders in the column in front of Dark Gryphon take $(amount)% less damage","effect":[{"effect_string":"damage_reduction,40","targets":["next_col"]}],"requirements":[],"effect_graphic_id":121,"hero_id":12,"properties":[]},
@@ -3344,7 +3380,17 @@ var gameTables = {
     {"id":34,"name":"Superior Training","graphic_id":"7989","description":"Increases the maximum Crusader level by %EFFECT%","tier":4,"tree":3,"num_levels":80,"effects":[{"effect":"increase_max_crusader_level","per_level":25}],"cost":{"base_cost":5000,"cost_type":"exp","factor":1.0888},"requirements":[{"condition":"talent_min_level","talent_id":23,"level":20}],"tier_order":"2","properties":[]},
     {"id":35,"name":"Fourth Time's The Charm","graphic_id":"7993","description":"Unlocks tier 4 objectives","tier":4,"tree":3,"num_levels":1,"effects":[{"feature":"unlock_tier_4_objectives"}],"cost":{"base_cost":25000},"requirements":[{"condition":"talent_min_level","talent_id":22,"level":1}],"tier_order":"3","properties":[]}
 ], "upgradeTable":[
-    {"id":1,"name":"Buddy System","description":"Jim works better with a friend.","effect":"unlock_formation_ability,31","cost":"100","graphic_id":3282,"hero_id":2,"required_level":5,"default_enabled":1},
+        {
+        "id":1,
+        "name":"Buddy System",
+        "description":"Jim works better with a friend.",
+        "effect":"unlock_formation_ability,31",
+        "cost":"100",
+        "graphic_id":3282,
+        "hero_id":2,
+        "required_level":5,
+        "default_enabled":1
+        },
     {"id":2,"name":"Click-o-Rama","description":"\"Together we are even stronger. You look tired, so why don't I take over for a bit?\"","effect":"unlock_ability,1","cost":"200","graphic_id":1249,"hero_id":1,"required_level":10,"default_enabled":1},
     {"id":3,"name":"Bigger Clicks","description":"\"Getting even more powerful together... I am as surprised as you. I think this is the beginning of a beautiful friendship.\"","effect":"hero_click_damage_percent,100","cost":"1000","graphic_id":1317,"hero_id":1,"required_level":25,"default_enabled":1},
     {"id":4,"name":"Swordplay","description":"The Bush Whacker has always been a team player.","effect":"unlock_formation_ability,30","cost":"8000","graphic_id":41,"hero_id":1,"required_level":50,"default_enabled":1},
