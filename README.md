@@ -15,7 +15,7 @@ As I make new changes I will try to make commits that accurately depict the new 
 * How to determine the buffs; eg tied to position, to crusader, or a hybrid of both.
 * How to determine types of buffs; eg a vector of "global" buffs, vs slot specific, vs tag specific, etc, or just calc everything dunamically and assign. The more it's broken up, the easier it would be to change only what is necessary however, which will result in faster calculations.
 
-* Talent Calcs, need the parser (should be easy since it's included in a specific line of the raw JSON), and then an interface/page to display the results to the player, as well as the ability to modify them for the player to "test" different talent configs.
+* Talent Calcs, need the parser (Done), and then an interface/page to display the results to the player (Done), as well as the ability to modify them for the player to "test" different talent configs.
 
 * Crafting: Currently the parser assigns the current levels and gear of the player, but this should be something that is adjustable by the player to test different crafting setups.
 
