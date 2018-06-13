@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Talents</title>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+</style>
+<!--  <link rel="stylesheet" href="StyleRef.css"> -->
+</head>
+
+<script type="text/javascript" src="../Java Scripts/Local_Cache.js"></script>
+<script type="text/javascript" src="../Java Scripts/populateTalents.js"></script>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+    populateTalents();
+    }, false);
+ </script>
+ <style>
+  .activeTalents {
+   background-color: #A52A2A;
+  }
+  .passiveTalents {
+   background-color: #228B22;
+  }
+  .utilityTalents {
+   background-color: #008B8B;
+  }
+  .name { white-space: nowrap; text-decoration: underline; font-weight: bold;};
+ </style>
+
+<body style="background-color:DarkSlateGray;">
+
+
+<div>
+ <ul>
+  <li><a href="Main.html">Home</a></li>
+  <li><a href="Automated_Input.html">Automated Input</a></li>
+  <li><a href="Crusader_Info.html">Crusader Table</a></li>
+  <li><a href="Formation_Calc.html">Formation Calculator</a></li>
+  <li><a class="active" href="Talents.html">Talents</a></li>
+</ul>
+</div>
+
+
+
+<table align="center" style="border-spacing: 30px 0; text-align:center">
+  <colgroup>
+    <col class="activeTalents" span="3" />
+    <col class="passiveTalents" span="3" />
+    <col class="utilityTalents" span="3" />
+  </colgroup>
+    <thead>
+     <tr style="background-color:DarkRed">
+        <td colspan="9"> Talents
+    </tr>
+    </thead>
+    <thead>
+       <tr style="text-align:center">
+       <td colspan="3">Active Tree</td>
+       <td colspan="3">Passive Tree</td>
+       <td colspan="3">Utility Tree</td>
+       </tr>
+    </thead>
+    <tr>
+        <td class = name>Time-O-Rama</td>        
+        <td class = name>Massive Criticals</td>
+        <td class = name>Speed Runner</td>
+        <td class = name>Passive Criticals</td>
+        <td class = name>Surplus Cooldowns</td>
+        <td class = name>Every Last Cent</td>
+        <td class = name>Spend It All</td>
+        <td class = name>Upgrade Them All</td>
+        <td class = name>Scavenger</td>
+    </tr>
+    <tr style = "text-align:center">
+        <td id=8></td>        
+        <td id=11> </td>
+        <td id=25> </td>
+        <td id=3> </td>
+        <td id=4> </td>
+        <td id=26> </td>
+        <td id=1> </td>
+        <td id=18> </td>
+        <td id=9> </td>
+    </tr>
+    <tr style = "text-align:center"; whitespace: no-wrap>
+        <td class = name>Endurance Training</td>        
+        <td class = name>Ride The Storm</td>
+        <td class = name>Storms Building</td>
+        <td class = name>Overenchanted</td>
+        <td class = name>Set Bonus</td>
+        <td class = name>Sharing Is Caring</td>
+        <td class = name>Speed Looter</td>
+        <td class = name>Efficient Crusading</td>
+        <td class = name>Doing It Again</td>
+    </tr>
+    <tr>
+        <td id=7> </td>
+        <td id=13> </td>
+        <td id=14> </td>
+        <td id=5> </td>
+        <td id=6> </td>
+        <td id=10> </td>
+        <td id=2> </td>
+        <td id=19> </td>
+        <td id=21> </td>
+    </tr>
+    <tr style = "text-align:center"; whitespace: no-wrap>
+        <td class = name>Gold-O-Splosion</td>        
+        <td class = name>Sniper</td>
+        <td></td>
+        <td class = name>Fast Learners</td>
+        <td class = name>Well Equipped</td>
+        <td class = name>Swap Day</td>
+        <td class = name>Deep Idol Scavenger</td>
+        <td class = name>Extra Training</td>
+        <td class = name>Triple Tier Trouble</td>
+    </tr>
+    <tr>
+        <td id=12> </td>
+        <td id=24> </td>
+        <td id=""> </td>
+        <td id=15> </td>
+        <td id=16> </td>
+        <td id=17> </td>
+        <td id=20> </td>
+        <td id=23> </td>
+        <td id=22> </td>
+    </tr>
+    <tr style = "text-align:center"; whitespace: no-wrap>
+        <td class = name>Extended Spawns</td>        
+        <td class = name>Click-tastrophy</td>
+        <td class = name>Instant Satisfaction</td>
+        <td class = name>Idle Increases</td>
+        <td class = name>Legendary Benefits</td>
+        <td class = name>Idols Over Time</td>
+        <td class = name>Sprint Mode</td>
+        <td class = name>Superior Training</td>
+        <td class = name>Fourth Times The Charm</td>
+    </tr>
+    <tr>
+        <td id=27> </td>
+        <td id=28> </td>
+        <td id=29> </td>
+        <td id=30> </td>
+        <td id=31> </td>
+        <td id=32> </td>
+        <td id=33> </td>
+        <td id=34> </td>
+        <td id=35> </td>
+    </tr>
+    <tr style = "text-align:center"; whitespace: no-wrap>
+        <td class = name>Mission Adrenaline</td>        
+        <td class = name>Lingering Buffs</td>
+        <td class = name>Omniclicking</td>
+        <td class = name>Cheer Squad</td>
+        <td class = name>Valuable Experience</td>
+        <td class = name>Every Little Bit Helps</td>
+        <td class = name>Idol Champions</td>
+        <td class = name>10K Training</td>
+        <td class = name>Bonus Training</td>
+    </tr>
+    <tr>
+        <td id=36> </td>
+        <td id=37> </td>
+        <td id=38> </td>
+        <td id=39> </td>
+        <td id=40> </td>
+        <td id=41> </td>
+        <td id=42> </td>
+        <td id=43> </td>
+        <td id=44> </td>
+    </tr>
+</table>
+
+</body>
+</html>

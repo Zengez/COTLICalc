@@ -214,12 +214,40 @@ localStorage.crusaderData = JSON.stringify(cruName);
 
    };
 
+/*
+ *
+ *
+ *    MASTER PARSE FUNCTION
+ *      This function calls all the other parse functions and allocates values.
+ *
+ *
+ */
 
 function Parse_Data() {
+
   // Initital Variables
 
-  var userRawTMP = document.getElementById("User_Input").value; // Grab string out of submitted data
-  var userRaw = JSON.parse(userRawTMP); // Convert string into JSON format
+userRawTMP = document.getElementById("User_Input").value; // Grab string out of submitted data
+userRaw = JSON.parse(userRawTMP); // Convert string into JSON format
+
+Parse_CruTab();// Parse the crusader table to get all crusader info needed to fill out the table with player data.
+Parse_Talents();// Parse the talents list to populate the talent list.
+
+
+//  sessionStorage.myObject = JSON.stringify(myObject);
+localStorage.crusaderData = JSON.stringify(cruData);
+document.getElementById("demo").innerHTML = "You've successfully parsed your data!";
+}
+
+/*
+ *
+ *    END OF MASTER PARSE FUNCTION
+ *
+ */
+
+
+
+function Parse_CruTab() {// This parses Gear and Crusader info for the display table.
 
   // Build database structure for internal usage.
 
@@ -320,8 +348,90 @@ function Parse_Data() {
     }
   }
 
-//  sessionStorage.myObject = JSON.stringify(myObject);
-localStorage.crusaderData = JSON.stringify(cruData);
-document.getElementById("demo").innerHTML = "You've successfully parsed your data!";
-
 }
+
+function Parse_Talents() {
+// This function will extract and parse the info from the raw input to fill out a talent table.
+
+//initialize the Talents structure
+cruData.talents=[{"talentID":1, "talentName":"spendItAll", "talentCurrentLevel":0, "talentMaxLevel":1},
+                         {"talentID":2, "talentName":"speedLooter", "talentCurrentLevel":0, "talentMaxLevel":1},
+                         {"talentID":3, "talentName":"passiveCriticals", "talentCurrentLevel":0, "talentMaxLevel":50},
+                         {"talentID":4, "talentName":"surplusCooldown", "talentCurrentLevel":0, "talentMaxLevel":50},
+                         {"talentID":5, "talentName":"overenchanted", "talentCurrentLevel":0, "talentMaxLevel":50},
+                         {"talentID":6, "talentName":"setBonus", "talentCurrentLevel":0, "talentMaxLevel":50},
+                         {"talentID":7, "talentName":"enduranceTraining", "talentCurrentLevel":0, "talentMaxLevel":25},
+                         {"talentID":8, "talentName":"timeORama", "talentCurrentLevel":0, "talentMaxLevel":20},
+                         {"talentID":9, "talentName":"scavenger", "talentCurrentLevel":0, "talentMaxLevel":50},
+                         {"talentID":10, "talentName":"sharingIsCaring", "talentCurrentLevel":0, "talentMaxLevel":14},
+                         {"talentID":11, "talentName":"massiveCriticals", "talentCurrentLevel":0, "talentMaxLevel":25},
+                         {"talentID":12, "talentName":"goldOSplosion", "talentCurrentLevel":0, "talentMaxLevel":25},
+                         {"talentID":13, "talentName":"rideTheStorm", "talentCurrentLevel":0, "talentMaxLevel":25},
+                         {"talentID":14, "talentName":"stormsBuilding", "talentCurrentLevel":0, "talentMaxLevel":15},
+                         {"talentID":15, "talentName":"fastLearners", "talentCurrentLevel":0, "talentMaxLevel":18},
+                         {"talentID":16, "talentName":"wellEquipped", "talentCurrentLevel":0, "talentMaxLevel":50},
+                         {"talentID":17, "talentName":"swapDay", "talentCurrentLevel":0, "talentMaxLevel":50},
+                         {"talentID":18, "talentName":"upgradeThemAll", "talentCurrentLevel":0, "talentMaxLevel":1},
+                         {"talentID":19, "talentName":"efficientCrusading", "talentCurrentLevel":0, "talentMaxLevel":25},
+                         {"talentID":20, "talentName":"deepIdolScavenger", "talentCurrentLevel":0, "talentMaxLevel":25},
+                         {"talentID":21, "talentName":"doingItAgain", "talentCurrentLevel":0, "talentMaxLevel":1},
+                         {"talentID":22, "talentName":"tripleTierTrouble", "talentCurrentLevel":0, "talentMaxLevel":1},
+                         {"talentID":23, "talentName":"extraTraining", "talentCurrentLevel":0, "talentMaxLevel":40},
+                         {"talentID":24, "talentName":"sniper", "talentCurrentLevel":0, "talentMaxLevel":40},
+                         {"talentID":25, "talentName":"speedRunner", "talentCurrentLevel":0, "talentMaxLevel":20},
+                         {"talentID":26, "talentName":"everyLastCent", "talentCurrentLevel":0, "talentMaxLevel":20},
+                         {"talentID":27, "talentName":"extendedSpawns", "talentCurrentLevel":0, "talentMaxLevel":40},
+                         {"talentID":28, "talentName":"Clicktastrophy", "talentCurrentLevel":0, "talentMaxLevel":40},
+                         {"talentID":29, "talentName":"InstantSatisfaction", "talentCurrentLevel":0, "talentMaxLevel":21},
+                         {"talentID":30, "talentName":"IdleIncreases", "talentCurrentLevel":0, "talentMaxLevel":40},
+                         {"talentID":31, "talentName":"LegendaryBenefits", "talentCurrentLevel":0, "talentMaxLevel":50},
+                         {"talentID":32, "talentName":"IdolsOverTime", "talentCurrentLevel":0, "talentMaxLevel":20},
+                         {"talentID":33, "talentName":"SprintMode", "talentCurrentLevel":0, "talentMaxLevel":10},
+                         {"talentID":34, "talentName":"SuperiorTraining", "talentCurrentLevel":0, "talentMaxLevel":80},
+                         {"talentID":35, "talentName":"FourthsTimetheCharm", "talentCurrentLevel":0, "talentMaxLevel":1},
+                         {"talentID":36, "talentName":"missionAdrenaline", "talentCurrentLevel":0, "talentMaxLevel":50},
+                         {"talentID":37, "talentName":"LingeringBuffs", "talentCurrentLevel":0, "talentMaxLevel":10},
+                         {"talentID":38, "talentName":"Omniclicking", "talentCurrentLevel":0, "talentMaxLevel":25},
+                         {"talentID":39, "talentName":"CheerSquad", "talentCurrentLevel":0, "talentMaxLevel":50},
+                         {"talentID":40, "talentName":"valuableExperience", "talentCurrentLevel":0, "talentMaxLevel":45},
+                         {"talentID":41, "talentName":"everyLittleBitHelps", "talentCurrentLevel":0, "talentMaxLevel":500},
+                         {"talentID":42, "talentName":"idolChamps", "talentCurrentLevel":0, "talentMaxLevel":40},
+                         {"talentID":43, "talentName":"10kTraining", "talentCurrentLevel":0, "talentMaxLevel":80},
+                         {"talentID":44, "talentName":"bonusTraining", "talentCurrentLevel":0, "talentMaxLevel":27}
+                        ];
+  //Now we want to populate the talent list.
+    var j
+    for ( j = 0; j < 44; ++j ) {
+      var index = j+1;
+      cruData.talents[j].talentCurrentLevel = userRaw.details.talents[index];
+    }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

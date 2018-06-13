@@ -1,5 +1,5 @@
 
-var cruData = JSON.parse(localStorage.crusaderData);
-var gameTables = JSON.parse(localStorage.gameTables);
-var cruName = JSON.parse(localStorage.cruName);
+cruData = JSON.parse(localStorage.crusaderData);
+gameTables = JSON.parse(localStorage.gameTables);
+cruName = JSON.parse(localStorage.cruName);
 
