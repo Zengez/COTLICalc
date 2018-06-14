@@ -4184,4 +4184,4 @@ var gameTables = {
     {"id":799,"name":"Snap","description":"It's over.","effect":"unlock_formation_ability,703","cost":"40960000000000000000000000000000000000000000000000000000000000000","graphic_id":9327,"hero_id":110,"required_level":800,"default_enabled":1}
 ]};
 
-localStorage.crusaderData = JSON.stringify(gameTables);
+localStorage.gameTables = JSON.stringify(gameTables);

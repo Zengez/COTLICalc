@@ -177,7 +177,7 @@
        {"name":"Not Implemented","ID":0, "Unlocked":"Not Implemented"},
        {"name":"Not Implemented","ID":0, "Unlocked":"Not Implemented"}
        ];
-localStorage.crusaderData = JSON.stringify(cruName);
+localStorage.cruName = JSON.stringify(cruName);
 
     //cruData = {hero:[{"cruID":0,"EP":0,"Owned":"No","GearName1":"Empty","GearRarity1":"Empty","GearName2":"Empty","GearRarity2":"Empty","GearName3":"Empty","GearRarity3":"Empty"}]}
 
